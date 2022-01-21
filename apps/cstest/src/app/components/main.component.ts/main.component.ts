@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppService } from "../../app.service";
 import { Observable } from "rxjs";
 import { OwnerEntity } from "../entityes/ownerEntity.entity";

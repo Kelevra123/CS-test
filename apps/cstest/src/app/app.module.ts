@@ -19,7 +19,13 @@ import { CarCellComponent } from './components/car-cell.component.ts/car-cell.co
 
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, MainComponent, CellComponent, CarCellComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    MainComponent,
+    CellComponent,
+    CarCellComponent
+  ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,

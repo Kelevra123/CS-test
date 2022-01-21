@@ -1,7 +1,7 @@
 import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
 import { Observable, of } from "rxjs";
 import { OwnerEntity } from "./entityes/ownerEntity.entity";
-import { delay, find } from "rxjs/operators";
+import { delay } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 
 
