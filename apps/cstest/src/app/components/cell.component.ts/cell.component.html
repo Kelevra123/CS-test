@@ -1,0 +1,13 @@
+<div *ngIf="owner" class="cell__container">
+  <div class="cell__row">
+    <div class="cell__wrapper" (click)="redirect()">
+      <div class="cell__box">{{owner.aLastName}}</div>
+      <div class="cell__box">{{owner.aFirstName}}</div>
+      <div class="cell__box">{{owner.aMiddleName}}</div>
+      <div class="cell__box">{{owner.aCars.length}}</div>
+      <div class="cell__box">{{owner.id}}</div>
+    </div>
+    <button class="cell__delete" (click)="onDeleteOwner(owner.id)">🗑️</button>
+  </div>
+</div>
+

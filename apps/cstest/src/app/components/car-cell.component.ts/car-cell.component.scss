@@ -1,0 +1,57 @@
+.car-cell {
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    margin: 0 1%;
+  }
+
+  &__input {
+    border: 1px solid grey;
+    @apply rounded;
+    padding: 0 3px;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__delete {
+    color: red;
+    text-align: center;
+    font-size: 17px;
+    width: 8%;
+    @apply rounded;
+    @apply bg-red-500;
+    align-self: end;
+
+    &:hover {
+      @apply bg-red-700;
+    }
+  }
+
+  &__static {
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    @apply rounded;
+    width: 18%;
+    margin: 0 1%;
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  &__center {
+    align-self: center;
+  }
+
+}
+
+

@@ -1,0 +1,45 @@
+<div class="car-cell__container">
+  <form class="car-cell__wrapper" [formGroup]="form">
+    <div class="car-cell__field" *ngIf="!editable">
+      <label class="car-cell__label">Номер</label>
+      <input class="car-cell__input" type="text" formControlName="aNumber" (change)="onChange()">
+      <small *ngIf="form.controls['aNumber'].errors?.required && form.controls['aNumber'].touched" class="car-cell__validators">Поле не должно быть пустым</small>
+      <small *ngIf="form.controls['aNumber'].errors?.pattern && form.controls['aNumber'].touched" class="car-cell__validators">Используйте латинские буквы</small>
+      <small *ngIf="form.controls['aNumber'].errors?.pattern && form.controls['aNumber'].touched" class="car-cell__validators">Например AH1001HA</small>
+      <small *ngIf="form.controls['aNumber'].errors?.uniq && form.controls['aNumber'].touched" class="car-cell__validators">Номер должен быть уникален</small>
+    </div>
+    <div class="car-cell__static" *ngIf="editable">
+      <h1>Номер</h1>
+      <h1>{{car.aNumber}}</h1>
+    </div>
+    <div class="car-cell__field" *ngIf="!editable">
+      <label class="car-cell__label">Марка</label>
+      <input class="car-cell__input" type="text" formControlName="aBrand" (change)="onChange()">
+      <small *ngIf="!form.controls['aBrand'].valid && form.controls['aBrand'].touched" class="car-cell__validators">Поле не должно быть пустым</small>
+    </div>
+    <div class="car-cell__static" *ngIf="editable">
+      <h1>Марка</h1>
+      <h1>{{car.aBrand}}</h1>
+    </div>
+    <div class="car-cell__field" *ngIf="!editable">
+      <label class="car-cell__label">Модель</label>
+      <input class="car-cell__input" type="text" formControlName="aModel" (change)="onChange()">
+      <small *ngIf="!form.controls['aModel'].valid && form.controls['aModel'].touched" class="car-cell__validators">Поле не должно быть пустым</small>
+    </div>
+    <div class="car-cell__static" *ngIf="editable">
+      <h1>Модель</h1>
+      <h1>{{car.aModel}}</h1>
+    </div>
+    <div class="car-cell__field" *ngIf="!editable">
+      <label class="car-cell__label">Год</label>
+      <input class="car-cell__input" type="text" formControlName="aYear" (change)="onChange()">
+      <small *ngIf="form.controls['aYear'].errors?.required && form.controls['aYear'].touched" class="car-cell__validators">Поле не должно быть пустым</small>
+      <small *ngIf="form.controls['aYear'].errors?.year && form.controls['aYear'].touched" class="car-cell__validators">Год в промежутке 1990 - 2022 </small>
+    </div>
+    <div class="car-cell__static" *ngIf="editable">
+      <h1>Год</h1>
+      <h1>{{car.aYear}}</h1>
+    </div>
+    <button class="car-cell__delete" [class.car-cell__center]="editable" (click)="onDeleteCar()">🗑️</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__title {
+    display: flex;
+    font-weight: bold;
+  }
+
+  &__table {
+
+
+  }
+
+  &__cell {
+    width: 17%;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  &__add-button {
+    @apply py-2 px-4 rounded;
+    @apply bg-green-500 text-white;
+    margin: 10px 0;
+
+    &:hover {
+      @apply bg-green-700;
+    }
+  }
+
+}

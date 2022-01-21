@@ -1,0 +1,50 @@
+<div class="form__container">
+  <div class="form__wrapper">
+    <form class="form__content" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form__column">
+        <div class="form__cell">
+          <label for="aLastName"  class="form__label">Фамилия</label>
+          <input id="aLastName" type="text" class="form__input" formControlName="aLastName">
+        </div>
+        <small class="form__validators" *ngIf="!form.controls['aLastName'].valid && form.controls['aLastName'].touched">Поле не должно быть пустым</small>
+      </div>
+      <div class="form__column">
+        <div class="form__cell">
+          <label for="aFirstName" class="form__label">Имя</label>
+          <input id="aFirstName" type="text" class="form__input" formControlName="aFirstName">
+        </div>
+        <small class="form__validators" *ngIf="!form.controls['aFirstName'].valid && form.controls['aFirstName'].touched">Поле не должно быть пустым</small>
+      </div>
+      <div class="form__column">
+        <div class="form__cell">
+          <label for="aMiddleName"  class="form__label">Отчество</label>
+          <input id="aMiddleName" type="text" class="form__input" formControlName="aMiddleName">
+        </div>
+        <small class="form__validators" *ngIf="!form.controls['aMiddleName'].valid && form.controls['aMiddleName'].touched">Поле не должно быть пустым</small>
+      </div>
+
+
+      <h1 class="form__title">Автомобили</h1>
+
+        <div *ngIf="owner">
+          <div class="form__cars" *ngFor="let car of owner.aCars">
+            <div class="car-cell"
+                 [car]="car"
+                 (onFormSubmit)="carAddFormSubmit($event)"
+                 (validEmit)="validationCheck($event)"
+                 (deleteCar)="onDeleteCar($event)"
+                 [editable]="car.status"
+            ></div>
+          </div>
+        </div>
+
+
+      <button class="form__add-car" type="button" [disabled]="!valid"  (click)="addCar()">Добавить автомобиль</button>
+      <div class="form__control_buttons">
+        <button *ngIf="isNew" class="form__save" type="submit" [disabled]="!form.valid || !valid">Сохранить</button>
+        <button *ngIf="!isNew" class="form__save" type="submit" [disabled]="!form.valid || !valid">Редактировать</button>
+        <button class="form__back" type="button" (click)="back()">Назад</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="main__container">
+  <div class="main__control">
+    <button class="main__add-button" (click)="toForm()">
+      + Добавить</button>
+  </div>
+  <div class="main__title">
+    <div class="main__cell">Фамилия</div>
+    <div class="main__cell">Имя</div>
+    <div class="main__cell">Отчество</div>
+    <div class="main__cell">Количество авто</div>
+    <div class="main__cell">id</div>
+  </div>
+  <div class="main__table" *ngFor="let owner of $owners | async">
+    <div class="cell" [owner]="owner"></div>
+  </div>
+</div>
