@@ -17,7 +17,7 @@ export class CarCellComponent implements OnInit {
   @Input() editable: boolean = false;
   @Output() onFormSubmit: EventEmitter<CarEntity> = new EventEmitter<CarEntity>();
   @Output() validEmit: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() deleteCar: EventEmitter<number> = new EventEmitter<number>()
+  @Output() deleteCar: EventEmitter<number> = new EventEmitter<number>();
   public id: number = new Date().valueOf();
 
   ngOnInit(): void {
@@ -50,6 +50,9 @@ export class CarCellComponent implements OnInit {
   }
 
   public onDeleteCar(): void {
+    const deleteAsk = window.confirm('Вы действительно хотите удалить информацию о автомобиле?');
+    if (!deleteAsk) return;
+
     if (this.car) {
       this.deleteCar.emit(this.car.id || 0);
     }

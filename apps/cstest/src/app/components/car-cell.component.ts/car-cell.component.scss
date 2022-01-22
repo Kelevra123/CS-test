@@ -35,6 +35,10 @@
     &:hover {
       @apply bg-red-700;
     }
+
+    @media (max-width: 540px) {
+      width: 17%;
+    }
   }
 
   &__static {

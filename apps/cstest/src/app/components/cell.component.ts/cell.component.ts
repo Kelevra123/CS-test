@@ -21,6 +21,9 @@ export class CellComponent {
   ) { }
 
   public onDeleteOwner(id: number): void {
+    const deleteAsk = window.confirm('Вы действительно хотите удалить информацию о пользователе?');
+    if (!deleteAsk) return;
+
     this._appService.deleteOwner(id).subscribe();
     window.location.reload();
   }
