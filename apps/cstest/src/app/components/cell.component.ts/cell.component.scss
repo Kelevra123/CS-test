@@ -24,6 +24,13 @@
     padding: 10px;
     border: 1px solid black;
     width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 756px) {
+      padding: 0;
+    }
   }
 
   &__delete {
@@ -37,6 +44,10 @@
 
     &:hover {
       @apply bg-red-700;
+    }
+
+    @media (max-width: 756px) {
+      width: 12%;
     }
   }
 
