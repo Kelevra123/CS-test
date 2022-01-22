@@ -78,10 +78,25 @@ export class FormComponent implements OnInit {
   }
 
   public addCar(): void {
-    if(this.owner) {
+    if(this.owner && this.form.valid) {
+      // this.forRepeatedNumbers();
+
       this.valid = false;
       this.cars.push({...new CarEntity('', '', '', 0, 0, false)});
       this.owner.aCars = [...this.cars];
+    }
+  }
+
+  private forRepeatedNumbers(): void {
+    if (this.isNew && this.cars.length > 0) {
+      this._appService.createOwner(
+        this.form.value.aLastName,
+        this.form.value.aFirstName,
+        this.form.value.aMiddleName,
+        this.cars
+      ).subscribe();
+    } if (!this.isNew && this.owner) {
+      this._appService.editOwner(this.owner).subscribe();
     }
   }
 

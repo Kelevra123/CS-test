@@ -39,7 +39,7 @@
         </div>
 
 
-      <button class="form__add-car" type="button" [disabled]="!valid"  (click)="addCar()">Добавить автомобиль</button>
+      <button class="form__add-car" type="button" [disabled]="!valid || !this.form.valid"  (click)="addCar()">Добавить автомобиль</button>
       <div class="form__control_buttons">
         <button *ngIf="isNew" class="form__save" type="submit" [disabled]="!form.valid || !valid">Сохранить</button>
         <button *ngIf="!isNew" class="form__save" type="submit" [disabled]="!form.valid || !valid">Редактировать</button>
