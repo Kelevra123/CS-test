@@ -7,7 +7,7 @@ import { MainComponent } from "./components/main.component.ts/main.component";
 export enum RoutePathKey {
   MAIN = '',
   FORM = 'form'
-};
+}
 
 export const routes: Routes = [
   { path: RoutePathKey.MAIN, component: MainComponent},

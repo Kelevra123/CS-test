@@ -1,5 +1,5 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
-import { Observable } from "rxjs";;
+import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { OwnerEntity } from "./components/entityes/ownerEntity.entity";
 
@@ -33,5 +33,5 @@ export class MyValidators {
       }
     });
   }
-  
+
 }
